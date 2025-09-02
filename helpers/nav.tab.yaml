@@ -1,0 +1,7 @@
+appId: org.awesome.app
+# Tabs navigation helper
+---
+  - tapOn: { id: "${tabId}" }
+  - extendedWaitUntil:
+      visible: { id: "${screenId}" }
+      timeout: 8000

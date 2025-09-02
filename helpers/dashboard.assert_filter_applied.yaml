@@ -1,0 +1,21 @@
+appId: org.awesome.app
+# Assert coins visibility on Dashboard after filtering in Settings
+---
+  - runFlow:
+      file: ./nav.tab.yaml
+      env:
+        tabId: "DashboardTab"
+        screenId: "dashboard"
+
+  - extendedWaitUntil:
+      visible: { id: "dashboard" }
+      timeout: 5000
+
+  # Assert visible coins
+  - extendedWaitUntil:
+      visible: ${shouldSeeId}
+      timeout: 5000
+  - takeScreenshot: "screens/dashboard_after_filter"
+
+  # Assert not visible coins
+  - assertNotVisible: ${shouldNotSeeId}

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="iPhone 16 Pro - iOS 18.6 - 280E0FD8-0774-408B-A8B5-2CF9AE99C7E7" tests="5" failures="1" time="131.0">
+    <testcase id="Filter - Only Bitcoin coins and select BTC coin for details" name="Filter - Only Bitcoin coins and select BTC coin for details" classname="Filter - Only Bitcoin coins and select BTC coin for details" time="24.0" status="SUCCESS"/>
+    <testcase id="Dashboard - Scroll down to bottom and tap last element" name="Dashboard - Scroll down to bottom and tap last element" classname="Dashboard - Scroll down to bottom and tap last element" time="49.0" status="SUCCESS"/>
+    <testcase id="Filter - Only Bitcoin coins + only Losers filter and assert winner coins are hidden" name="Filter - Only Bitcoin coins + only Losers filter and assert winner coins are hidden" classname="Filter - Only Bitcoin coins + only Losers filter and assert winner coins are hidden" time="23.0" status="ERROR">
+      <failure>Assertion is false: "Good choice:  Bitcoin SV @ $0" is visible</failure>
+    </testcase>
+    <testcase id="Filter - Only Bitcoin coins + only Winners filter and assert loser coin is hidden" name="Filter - Only Bitcoin coins + only Winners filter and assert loser coin is hidden" classname="Filter - Only Bitcoin coins + only Winners filter and assert loser coin is hidden" time="21.0" status="SUCCESS"/>
+    <testcase id="Drawer - Assert ultimate question visible in drawer and get the answer" name="Drawer - Assert ultimate question visible in drawer and get the answer" classname="Drawer - Assert ultimate question visible in drawer and get the answer" time="14.0" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,22 @@
+  appId: org.awesome.app
+# Get the ultimate answer to life, universe and everything
+---
+  # Ultimate question of life - check visible
+  - assertVisible:
+      text: "Legend says that if you click on the button below, you may get the answer to the Ultimate Question of Life, the Universe, and Everything..."
+  - takeScreenshot: "screens/drawer_open"
+
+  # Trigger popup showing the answer
+  - tapOn:
+      text: "Get the ultimate answer"
+
+  # Assert popup with "42" appears
+  - extendedWaitUntil:
+      visible: "42"
+      timeout: 5000
+  - takeScreenshot: "screens/popup_42"
+
+  # Dismiss answer popup
+  - tapOn:
+      text: "OK"
+      optional: true

@@ -1,0 +1,43 @@
+appId: org.awesome.app
+name: Filter - Only Bitcoin coins + only Winners filter and assert loser coin is hidden
+tags: [filters, dashboard]
+---
+  - runFlow: ../helpers/app.launch.yaml
+
+  # Select Only BTC coins filter on Settings
+  - runFlow:
+      file: ../helpers/settings.apply_filter.yaml
+      env:
+        radioName: "Only show \"Bitcoin\" coins"
+
+    # Select Winners filter on Settings
+  - runFlow:
+      file: ../helpers/settings.apply_filter.yaml
+      env:
+        radioName: "Only show winners"
+
+  # Assert Dashboard shows only Bitcoin Winner coins (and NOT a non-BTC coin and loser coin)
+  - runFlow:
+      file: ../helpers/dashboard.assert_filter_applied.yaml
+      env:
+        shouldSeeId: "Coin-btc"
+        # Coin that should NOT be visible:
+        shouldNotSeeId: "Coin-bsv"
+
+  # Tap on the Bitcoin coin and assert the popup
+  - runFlow:
+      file: ../helpers/dashboard.tap_coin.yaml
+      env:
+        # Identify the coin
+        coinId: Coin-btc
+
+
+  # Assert and dismiss coin details popup
+  - runFlow:
+      file: ../helpers/popup.assert_and_dismiss_coin.yaml
+      env:
+        # Identify the popup
+        popupText: "Good choice:  Bitcoin @ $9228.8!"
+
+        # Identify the OK button
+        okText: "OK"

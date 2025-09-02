@@ -1,0 +1,8 @@
+appId: org.awesome.app
+# Launch the app and wait until the dashboard tab is visible
+---
+  - launchApp:
+      clearState: true
+  - extendedWaitUntil:
+      visible: { id: "DashboardTab" }
+      timeout: 15000

@@ -1,0 +1,29 @@
+appId: org.awesome.app
+name: Dashboard - Scroll down to bottom and tap last element
+tags: [scroll, dashboard]
+---
+  - runFlow: ../helpers/app.launch.yaml
+
+  # Scroll down to last element on dashboard
+  - runFlow:
+      file: ../helpers/dashboard.scroll_to_element.yaml
+      env:
+        coinId: Coin-rune
+
+  # Tap last coin on dashboard
+  - runFlow:
+      file: ../helpers/dashboard.tap_coin.yaml
+      env:
+        # Identify the coin
+        coinId: Coin-rune
+
+
+  # Assert and dismiss coin details popup
+  - runFlow:
+      file: ../helpers/popup.assert_and_dismiss_coin.yaml
+      env:
+        # Identify the popup
+        popupText: "Good choice:  Thorchain @ $0.38045!"
+
+        # Identify the OK button
+        okText: "OK"

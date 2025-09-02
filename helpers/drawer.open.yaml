@@ -1,0 +1,9 @@
+appId: org.awesome.app
+# Open drawer
+---
+  - tapOn: { text: "Show navigation menu" }
+  - extendedWaitUntil:
+      visible: { id: "sidemenu" }
+      timeout: 5000
+
+

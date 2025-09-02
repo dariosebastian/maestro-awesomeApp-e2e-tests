@@ -1,0 +1,14 @@
+appId: org.awesome.app
+# Settings page helper - filtering
+---
+  - runFlow:
+      file: ./nav.tab.yaml
+      env:
+        tabId: "SettingsTab"
+        screenId: "settings"
+  - extendedWaitUntil:
+      visible: { id: "settings" }
+      timeout: 5000
+
+  - tapOn: { text: "${radioName}" }
+  - takeScreenshot: "screens/settings_${radioName}"

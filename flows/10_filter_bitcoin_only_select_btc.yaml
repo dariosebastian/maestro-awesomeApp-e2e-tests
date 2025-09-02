@@ -1,0 +1,36 @@
+appId: org.awesome.app
+name: Filter - Only Bitcoin coins and select BTC coin for details
+tags: [filters, dashboard]
+---
+  - runFlow: ../helpers/app.launch.yaml
+
+  # Select filter on Settings
+  - runFlow:
+      file: ../helpers/settings.apply_filter.yaml
+      env:
+        radioName: "Only show \"Bitcoin\" coins"
+
+  # Assert Dashboard shows only Bitcoin (and NOT a non-BTC coin)
+  - runFlow:
+      file: ../helpers/dashboard.assert_filter_applied.yaml
+      env:
+        shouldSeeId: "Coin-btc"
+        # Coin that should NOT be visible:
+        shouldNotSeeId: "Coin-eth"
+
+  # Tap on the Bitcoin coin and assert the popup
+  - runFlow:
+      file: ../helpers/dashboard.tap_coin.yaml
+      env:
+        # Identify the coin
+        coinId: Coin-btc
+
+  # Assert and dismiss coin details popup
+  - runFlow:
+      file: ../helpers/popup.assert_and_dismiss_coin.yaml
+      env:
+        # Identify the popup
+        popupText: "Good choice:  Bitcoin @ $9228.8!"
+
+        # Identify the OK button
+        okText: "OK"

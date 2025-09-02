@@ -1,0 +1,10 @@
+appId: org.awesome.app
+---
+# Scroll the container until the element is visible
+  - scrollUntilVisible:
+      element: { id: "${coinId}" }
+      direction: DOWN
+      timeout: 40000
+      speed: 90
+      waitToSettleTimeoutMs: 250
+      visibilityPercentage: 60

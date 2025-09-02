@@ -1,0 +1,9 @@
+appId: org.awesome.app
+---
+  # Find & tap the target coin
+  - extendedWaitUntil:
+      visible: { id: "${coinId}" }
+      timeout: 8000
+
+  - tapOn:
+      id: "${coinId}"

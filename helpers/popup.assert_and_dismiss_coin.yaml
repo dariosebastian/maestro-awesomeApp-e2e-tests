@@ -1,0 +1,21 @@
+  appId: org.awesome.app
+---
+  # Wait for the popup to appear
+  - extendedWaitUntil:
+      visible: { text: "${popupText}" }
+      timeout: 5000
+
+  - extendedWaitUntil:
+      visible: { text: "${okText}" }
+      timeout: 5000
+
+  - takeScreenshot: "screens/popup_${coinId}_${coinLabel}_${coinText}"
+
+  # Dismiss the popup by tapping OK
+  - tapOn:
+      text: "${okText}"
+
+  # Verify popup disappeared
+  - extendedWaitUntil:
+      notVisible: { text: "${popupText}" }
+      timeout: 4000

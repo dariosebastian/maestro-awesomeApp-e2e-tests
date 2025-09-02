@@ -1,0 +1,8 @@
+appId: org.awesome.app
+name: Drawer - Assert ultimate question visible in drawer and get the answer
+tags: [drawer, ui, question, ultimate answer]
+---
+  - runFlow: ../helpers/app.launch.yaml
+  - runFlow: ../helpers/drawer.open.yaml
+  - runFlow: ../helpers/drawer.get_ultimate_answer.yaml
+

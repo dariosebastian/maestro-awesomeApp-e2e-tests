@@ -1,4 +1,4 @@
-# KK-QA-TESTAPP — E2E (Maestro)
+# Maestro E2E Test Suite for AwesomeApp
 
 End-to-end tests for `AwesomeApp` using **Maestro**. Covers:
 

@@ -12,10 +12,16 @@ End-to-end tests for `AwesomeApp` using **Maestro**. Covers:
 - iOS Simulator or Android Emulator running
 - Maestro installed
 
-## Run all tests (local)
+## Run all tests
 
 ```bash
 maestro test ./flows --format junit --output build/maestro-report.xml
+```
+
+## Run with one command (script)
+```bash
+chmod +x ./run_all.sh
+./run_all.sh
 ```
 
 Artifacts:

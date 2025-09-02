@@ -1,0 +1,4 @@
+build/
+screens/
+.DS_Store
+.env
